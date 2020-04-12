@@ -10,7 +10,7 @@ class ConstructInjectedControllerTest {
     private ConstructInjectedController controller;
     @BeforeEach
     void setUp() {
-        controller = new ConstructInjectedController(new GreetingServiceImpl(this.getClass().getSimpleName()));
+        controller = new ConstructInjectedController(new GreetingServiceImpl());
     }
 
     @Test
