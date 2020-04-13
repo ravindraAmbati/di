@@ -2,16 +2,14 @@ package spring.projects.di.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import spring.projects.di.services.GreetingServiceImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import spring.projects.di.services.ConstructInjectedGreetingService;
 
 class PropertyInjectedControllerTest {
     private PropertyInjectedController controller;
     @BeforeEach
     void setUp() {
         controller = new PropertyInjectedController();
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructInjectedGreetingService();
     }
 
     @Test
