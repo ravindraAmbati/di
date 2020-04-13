@@ -43,6 +43,12 @@ public class DiApplication {
 		I18nController beanI18nController = context.getBean("i18nController",I18nController.class);
 		System.out.println(beanI18nController.sayHello());
 
+		System.out.println("-------------------------");
+		System.out.println(PetController.class.getSimpleName());
+
+		PetController beanPetController = context.getBean("petController",PetController.class);
+		System.out.println(beanPetController.getPetType());
+
 
 	}
 
