@@ -13,22 +13,27 @@ public class DiApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DiApplication.class, args);
-		MyController bean = context.getBean("myController", MyController.class);
-		String greetings = bean.sayHello();
-		System.out.println(greetings);
 
+		System.out.println("-------------------------");
+		System.out.println(MyController.class.getSimpleName());
+		MyController beanMyController = context.getBean("myController", MyController.class);
+		System.out.println(beanMyController.sayHello());
+
+		System.out.println("-------------------------");
 		System.out.println(PropertyInjectedController.class.getSimpleName());
 
 		//@Autowired for property
 		PropertyInjectedController beanPropertyInjectedController = context.getBean("propertyInjectedController",PropertyInjectedController.class);
 		System.out.println(beanPropertyInjectedController.getGreetingService().greetings());
 
+		System.out.println("-------------------------");
 		System.out.println(SetterInjectedController.class.getSimpleName());
 
 		//@Autowired for setter
 		SetterInjectedController beanSetterInjectedController = context.getBean("setterInjectedController",SetterInjectedController.class);
 		System.out.println(beanSetterInjectedController.getGreetingService().greetings());
 
+		System.out.println("-------------------------");
 		System.out.println(ConstructInjectedController.class.getSimpleName());
 
 		//@Autowired is not required for construct
