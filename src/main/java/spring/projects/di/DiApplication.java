@@ -4,12 +4,23 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import spring.projects.di.controllers.*;
+import spring.projects.di.services.CustomBeanPostProcessor;
+import spring.projects.di.services.LifeCycleDemoBean;
 
 @SpringBootApplication
 public class DiApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DiApplication.class, args);
+
+		System.out.println("-------------------------");
+		System.out.println(LifeCycleDemoBean.class.getSimpleName());
+		context.getBean("lifeCycleDemoBean", LifeCycleDemoBean.class);
+
+		System.out.println("-------------------------");
+		System.out.println(CustomBeanPostProcessor.class.getSimpleName());
+		context.getBean("customBeanPostProcessor", CustomBeanPostProcessor.class);
+
 
 		System.out.println("-------------------------");
 		System.out.println(MyController.class.getSimpleName());
