@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import spring.projects.di.controllers.*;
 import spring.projects.di.examplebeans.DataSource;
+import spring.projects.di.examplebeans.JMSBroker;
 import spring.projects.di.services.CustomBeanPostProcessor;
 import spring.projects.di.services.LifeCycleDemoBean;
 
@@ -66,6 +67,11 @@ public class DiApplication {
 
 		DataSource beanDataSource = context.getBean(DataSource.class);
 		System.out.println(beanDataSource.toString());
+
+		System.out.println("-------------------------");
+
+		JMSBroker beanJMSBroker = context.getBean(JMSBroker.class);
+		System.out.println(beanJMSBroker.toString());
 
 
 	}
