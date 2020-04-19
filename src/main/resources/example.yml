@@ -1,0 +1,34 @@
+#this is new yml file
+
+name: Ravindra
+
+names:
+  - Ravindra
+  - Reddy
+  - Ambati
+
+pound_sign: "#"
+
+book:
+  author: John
+  publisher: John's book house
+
+  some boolean values
+
+truth: yes #Yes #yes #True #true like wise #no #No #false #False
+
+string_val: "this is an example of string"
+
+string_val_with_colon: "this is an example of string: with colon"
+
+include_new_lines: |
+  this is
+  an example of
+  new lines in a
+  single property
+
+ignore_newLines: >
+  this is an example of ignore of new lines after greater than symbol
+  you cannot see
+  these lines
+  after first line
