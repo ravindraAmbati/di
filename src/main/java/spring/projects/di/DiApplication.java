@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import spring.projects.di.controllers.*;
+import spring.projects.di.examplebeans.DataSource;
 import spring.projects.di.services.CustomBeanPostProcessor;
 import spring.projects.di.services.LifeCycleDemoBean;
 
@@ -51,14 +52,20 @@ public class DiApplication {
 		System.out.println("-------------------------");
 		System.out.println(I18nController.class.getSimpleName());
 
-		I18nController beanI18nController = context.getBean("i18nController",I18nController.class);
+		I18nController beanI18nController = context.getBean("i18nController", I18nController.class);
 		System.out.println(beanI18nController.sayHello());
 
 		System.out.println("-------------------------");
 		System.out.println(PetController.class.getSimpleName());
 
-		PetController beanPetController = context.getBean("petController",PetController.class);
+		PetController beanPetController = context.getBean("petController", PetController.class);
 		System.out.println(beanPetController.getPetType());
+
+		System.out.println("-------------------------");
+		System.out.println(DataSource.class.getSimpleName());
+
+		DataSource beanDataSource = context.getBean(DataSource.class);
+		System.out.println(beanDataSource.toString());
 
 
 	}
