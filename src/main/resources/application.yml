@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: TG,cat
+
+db:
+  username: yml_rambati
+  password: yml_some@123
+  url: "jdbc:h2:file:dbURL_yml"
+
+jms:
+  username: yml_jmsUser
+  password: yml_jms@123
+  url: "jms:file:file:dbURL_yml"
