@@ -1,0 +1,4 @@
+jms:
+  username: yml_jmsUser**
+  password: yml_jms@123**
+  url: "jms:file:file:dbURL_yml***"
