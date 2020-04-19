@@ -1,35 +1,29 @@
 package spring.projects.di.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 import spring.projects.di.examplebeans.DataSource;
 import spring.projects.di.examplebeans.JMSBroker;
 
 @Configuration
 //@PropertySource({"classpath:dataSource.properties","classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:dataSource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:dataSource.properties"),
+//        @PropertySource("classpath:jms.properties")
+//})
+//application.properties is auto configured and hanlded by spring boot
 public class DataSourcePropertyConfig {
 
-    @Autowired
-    Environment env;
-
     @Value("${db.username}")
-    private String username;
+    private String dbUsername;
 
     @Value("${db.password}")
-    private String password;
+    private String dbPassword;
 
     @Value("${db.url}")
-    private String url;
+    private String dbUrl;
 
     @Value("${jms.username}")
     private String jmsUsername;
@@ -47,7 +41,7 @@ public class DataSourcePropertyConfig {
 
     @Bean
     public DataSource dataSource() {
-        return new DataSource(env.getProperty("USERNAME"), password, url);
+        return new DataSource(dbUsername, dbPassword, dbUrl);
     }
 
     @Bean
